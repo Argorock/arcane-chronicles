@@ -1,0 +1,110 @@
+header {
+    margin: 0 auto;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background: linear-gradient(to right, #4e54c8, #777eff);
+    border-bottom: 2px solid silver;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav img {
+    /* padding-top: 50px; */
+    width: 100px;
+}
+a {
+    text-decoration: none;
+    color: silver;
+}
+
+a:hover {
+    color: silver;
+    text-shadow:  0 0 5px gold, 0 0 20px silver, 0 0 30px white ; 
+}
+
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+    font-size: 1.5em;
+    color: silver;
+    padding: 10px;
+    border: 2px solid transparent; 
+}
+
+
+nav li::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: silver;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 10px gold, 0 0 20px rgba(192,192,192,0.6), 0 0 30px rgba(192,192,192,0.3); 
+    animation: circleBorder 2s infinite linear, thirdCircle 2s infinite linear;
+
+}
+
+nav li:hover::after {
+    opacity: 1;
+}
+nav li::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: silver;
+    border-radius: 50%;
+    opacity: 0; 
+    box-shadow: 0 0 10px gold, 0 0 20px rgba(192,192,192,0.6), 0 0 30px rgba(192,192,192,0.3); 
+    animation: oppositeCircle 2s infinite linear, fourthCircle 2s infinite linear;
+}
+
+nav li:hover::before {
+    opacity: 1; 
+}
+
+@keyframes circleBorder {
+    0% { top: 0; left: 0; }
+    25% { top: 0; left: 100%; }
+    50% { top: 100%; left: 100%; }
+    75% { top: 100%; left: 0; }
+    100% { top: 0; left: 0; }
+}
+
+@keyframes oppositeCircle {
+    0% { top: 100%; left: 100%; } 
+    25% { top: 100%; left: 0; }
+    50% { top: 0; left: 0; } 
+    75% { top: 0; left: 100%; }
+    100% { top: 100%; left: 100%; } 
+}
+
+/* @keyframes thirdCircle {
+    0% { top: 100%; left: 0; } 
+    25% { top: 0; left: 0; }
+    50% { top: 0; left: 100%; } 
+    75% { top: 100%; left: 100%; }
+    100% { top: 100%; left: 0; } 
+}
+
+@keyframes fourthCircle {
+    0% { top: 0; left: 100%; } 
+    25% { top: 100%; left: 100%; }
+    50% { top: 100%; left: 0; } 
+    75% { top: 0; left: 0; }
+    100% { top: 0; left: 100%; } 
+} */
+
+
